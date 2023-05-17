@@ -12,11 +12,11 @@
 
 <form action="{{route('posts.store')}}" method="post">
     @csrf
-    <input id="title" type="text" name="title" placeholder="Post title" class="@error('title') is-invalid @enderror">
+    <input id="title" type="text" name="title" placeholder="Post title" value="{{old('title')}}" class="@error('title') is-invalid @enderror">
     @error('title')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
-    <input id="body" type="textarea" name="body" placeholder="Post content" class="@error('body') is-invalid @enderror">
+    <input id="body" type="textarea" name="body" placeholder="Post content" value="{{old('body')}}" class="@error('body') is-invalid @enderror">
     @error('body')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
